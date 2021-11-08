@@ -74,23 +74,31 @@ body {
 }
 
 #arrowRight{
-    background:url("./image/arrow.svg") no-repeat center;
+    background:url("./image/arrow.svg") no-repeat center #e1e1e1;
     width: 60px;
     height: 280px;
     border: none;
     position: relative;
     top: 0;
-    right: -6px;
+    right: -10px;
+    border-radius: 5px;
+}
+#arrowRight:hover{
+    background:url("./image/arrow.svg") no-repeat center #aaa;
 }
 #arrowLeft{
-    background:url("./image/arrow.svg") no-repeat center;
+    background:url("./image/arrow.svg") no-repeat center #e1e1e1;
     transform: rotate(180deg);
     width: 60px;
     height: 280px;
     border: none;
     position: relative;
     top: 0;
-    left: -25px;
+    left: -29px;
+    border-radius: 5px;
+}
+#arrowLeft:hover{
+    background:url("./image/arrow.svg") no-repeat center #aaa;
 }
 .arrow{
     width: 40px;
