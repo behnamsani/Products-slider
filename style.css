@@ -75,20 +75,22 @@ body {
 
 #arrowRight{
     background:url("./image/arrow.svg") no-repeat center;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 280px;
     border: none;
     position: relative;
-    top: 113px;
+    top: 0;
+    right: -6px;
 }
 #arrowLeft{
     background:url("./image/arrow.svg") no-repeat center;
     transform: rotate(180deg);
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 280px;
     border: none;
     position: relative;
-    top: 113px;
+    top: 0;
+    left: -25px;
 }
 .arrow{
     width: 40px;

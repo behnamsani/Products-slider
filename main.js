@@ -14,11 +14,11 @@ imgArr[3].classList.add("pos4");
 imgArr[4].classList.add("pos5");
 
 
-
 let endPos;
 let startPos;
 let flag=false;
 let flagS=false;
+let turnOnLeft=false;
 
 let addEndPos=0;
 let addStartPos=img.length-1;
@@ -30,10 +30,16 @@ btnLeft.addEventListener("click",moveLeft);
 
 
 function moveLeft(){
+    console.log(flagS);
     for(let i=0;i<imgArr.length;i++){
+
         if(imgArr[i].classList[2]==="pos1"&& i===0){
+            let findUnshift=imgArr[imgArr.length-1].id;
+            findUnshift = findUnshift.split("m")[1];
+            addStartPos=findUnshift-1;
             imgArr.unshift(img[addStartPos]);
             flagS=true
+            console.log("flagS");
         }
     }    
     for(let i=0;i<imgArr.length;i++){
@@ -60,16 +66,23 @@ function moveLeft(){
         console.log(addStartPos);
         imgArr.pop();
         console.log(imgArr);
+        flagS=false;
+        console.log("remove")
     }    
 }
 
 
 function moveRight(){
+    
     for(let i=0;i<imgArr.length;i++){
+
         if(imgArr[i].classList[2]==="pos5" && i===imgArr.length-1){
+            let findPush=imgArr[0].id;
+            findPush = findPush.split("m")[1];
+            addEndPos=findPush-1;
             imgArr.push(img[addEndPos]);
             flag=true
-        }
+        } 
     }    
         for(let i=0;i<imgArr.length;i++){
             if(imgArr[i].classList[2]==="pos5"){
@@ -89,6 +102,7 @@ function moveRight(){
             imgArr[endPos+1].classList.add("pos5");
             endPos=endPos+1;
             console.log(endPos);
+            console.log(imgArr);
             
         
         if(flag===true){
@@ -98,6 +112,7 @@ function moveRight(){
             }else{addEndPos=addEndPos+1;}
             imgArr.shift();
             console.log(imgArr);
+            flag=false;
         }
         
         
