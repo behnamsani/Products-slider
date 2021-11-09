@@ -19,15 +19,36 @@ let startPos;
 let flag=false;
 let flagS=false;
 let turnOnLeft=false;
+let moving=true;
 
 let addEndPos=0;
 let addStartPos=img.length-1;
+let moveAuto;
 
 
-
+btnRight.addEventListener("click",stop);
 btnRight.addEventListener("click",moveRight);
+
+btnLeft.addEventListener("click",stop);
 btnLeft.addEventListener("click",moveLeft);
 
+move();
+
+
+
+
+
+
+
+function move(){
+    clearInterval(moveAuto);
+    moveAuto = setInterval(moveRight,5000);;
+}
+
+function stop(){
+    clearInterval(moveAuto);
+    moving=false;
+}
 
 function moveLeft(){
     for(let i=0;i<imgArr.length;i++){
@@ -62,9 +83,12 @@ function moveLeft(){
         }else{addStartPos=addStartPos-1;}
         imgArr.pop();
         flagS=false;
-    }    
+    }
+    if(moving===false){
+        setTimeout(move,6000);
+        moving=true;
+    }   
 }
-
 
 function moveRight(){
     
@@ -101,6 +125,10 @@ function moveRight(){
             }else{addEndPos=addEndPos+1;}
             imgArr.shift();
             flag=false;
-        }  
+        }
+        if(moving===false){
+            setTimeout(move,6000);
+            moving=true;
+        }     
 }
             
