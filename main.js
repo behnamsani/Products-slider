@@ -32,6 +32,9 @@ btnRight.addEventListener("click",moveRight);
 btnLeft.addEventListener("click",stop);
 btnLeft.addEventListener("click",moveLeft);
 
+boxImg.addEventListener("mouseover",stop);
+boxImg.addEventListener("mouseleave",move);
+
 move();
 
 
@@ -42,7 +45,8 @@ move();
 
 function move(){
     clearInterval(moveAuto);
-    moveAuto = setInterval(moveRight,5000);;
+    moveAuto = setInterval(moveRight,5000);
+    moving=true;
 }
 
 function stop(){
@@ -86,7 +90,6 @@ function moveLeft(){
     }
     if(moving===false){
         setTimeout(move,6000);
-        moving=true;
     }   
 }
 
@@ -128,7 +131,6 @@ function moveRight(){
         }
         if(moving===false){
             setTimeout(move,6000);
-            moving=true;
         }     
 }
             
